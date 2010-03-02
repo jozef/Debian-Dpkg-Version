@@ -1,0 +1,7 @@
+Build.PL
+Changes
+lib/Debian/Dpkg/Version.pm
+MANIFEST			This list of files
+META.yml
+README
+t/100_Dpkg_Version.t
