@@ -21,7 +21,7 @@ package Debian::Dpkg::Version;
 use strict;
 use warnings;
 
-our $VERSION = '1.15.5.6';
+our $VERSION = '1.15.5.6.1';
 
 use Carp;
 

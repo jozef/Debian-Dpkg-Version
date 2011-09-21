@@ -25,10 +25,11 @@ my @ops = ("<", "<<", "lt",
 	   ">=", "ge",
 	   ">", ">>", "gt");
 
-plan tests => scalar(@tests) * (3 * scalar(@ops) + 4) + 8;
+plan tests => scalar(@tests) * (2 * scalar(@ops) + 4) + 8;
 
 sub dpkg_vercmp {
      my ($a, $cmp, $b) = @_;
+
      return system('dpkg', '--compare-versions', $a, $cmp, $b) == 0;
 }
 
@@ -106,11 +107,11 @@ foreach my $case (@tests) {
 	if ($truth->{$res}{$op}) {
 	    ok(version_compare_relation($a, $norm_op, $b), "$a $op $b => true");
 	    ok(obj_vercmp($va, $op, $vb), "Debian::Dpkg::Version($a) $op Debian::Dpkg::Version($b) => true");
-	    ok(dpkg_vercmp($a, $op, $b), "dpkg --compare-versions $a $op $b => true");
+	    #ok(dpkg_vercmp($a, $op, $b), "dpkg --compare-versions $a $op $b => true");
 	} else {
 	    ok(!version_compare_relation($a, $norm_op, $b), "$a $op $b => false");
 	    ok(!obj_vercmp($va, $op, $vb), "Debian::Dpkg::Version($a) $op Debian::Dpkg::Version($b) => false");
-	    ok(!dpkg_vercmp($a, $op, $b), "dpkg --compare-versions $a $op $b => false");
+	    #ok(!dpkg_vercmp($a, $op, $b), "dpkg --compare-versions $a $op $b => false");
 	}
     }
 }
