@@ -38,7 +38,7 @@ FUNCTIONS
     All the functions are exported by default.
 
     version_compare($a, $b)
-        Returns -1 is $a is smaller than $b, 0 if they are equal and 1 if $a
+        Returns -1 if $a is smaller than $b, 0 if they are equal and 1 if $a
         is bigger than $b.
 
         If $a or $b are not valid version numbers, it dies with an error.
@@ -60,7 +60,7 @@ FUNCTIONS
 
     version_compare_string($a, $b)
         String comparison function used for comparing non-numerical parts of
-        version numbers. Returns -1 is $a is smaller than $b, 0 if they are
+        version numbers. Returns -1 if $a is smaller than $b, 0 if they are
         equal and 1 if $a is bigger than $b.
 
         The "~" character always sort lower than anything else. Digits sort
